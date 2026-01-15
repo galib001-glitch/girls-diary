@@ -1,0 +1,6 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #fff1f5, #e3f2fd);
+  font-family: Georgia, cursive;
+  -webkit-tap-highlight-color: transparent;
+}

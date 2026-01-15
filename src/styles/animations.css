@@ -1,0 +1,83 @@
+/* ===== FLYING BUTTERFLIES (FIXED PATH) ===== */
+
+.butterfly.realistic {
+  position: fixed;
+  left: -80px;
+  z-index: 9999;
+  pointer-events: none;
+  display: flex;
+  gap: 2px;
+
+  animation:
+    flyAcross linear infinite,
+    floatY ease-in-out infinite,
+    sway ease-in-out infinite;
+}
+
+/* Random vertical spread */
+.b1 { top: 30%; animation-duration: 20s, 4s, 6s; }
+.b2 { top: 50%; animation-duration: 24s, 5s, 8s; }
+.b3 { top: 70%; animation-duration: 28s, 6s, 10s; }
+
+/* Fly across whole screen */
+@keyframes flyAcross {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(130vw);
+  }
+}
+
+/* Gentle up/down */
+@keyframes floatY {
+  0%,100% { margin-top: 0; }
+  50% { margin-top: -30px; }
+}
+
+/* Slight left-right sway */
+@keyframes sway {
+  0%,100% { rotate: 0deg; }
+  50% { rotate: 12deg; }
+}
+
+
+
+/* ================= LOVE BIRDS ================= */
+.lovebirds {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.8rem;
+  animation: blink 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+/* ================= SPARKLES ================= */
+
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.2rem;
+  animation: sparkle 0.8s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.8) translateY(-25px);
+  }
+}
